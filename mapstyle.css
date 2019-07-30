@@ -32,7 +32,7 @@ img{
 div.secondary{
   position: relative;
   padding: 10px;
-  left: 15%;
+  left: 13%;
   right: auto;
   width: 70%;
   background-color: #5082b8;
@@ -71,6 +71,14 @@ img.secondary{
 
 .selected{
   background-color: #ae882a;
+}
+
+.vidswitch{
+  width: 40%;
+  position: relative;
+  left: 30%;
+  right: auto;
+  font-family: "Merriweather", serif;
 }
 
 #buttons{

@@ -59,4 +59,22 @@ $(document).ready(function(){
       $("iframe.recent").removeClass("hidden recent");
     }
   });
+
+  $(".vidswitch").on("click", function() {
+    if ($(this).hasClass('datupan')){
+      $(".pdswitch").addClass("temp");
+      $("iframe").not(".hidden").addClass("pdswitch hidden");
+      $(".temp").removeClass("pdswitch hidden temp");
+    }
+    else if ($(this).hasClass('susron')){
+      $(".srswitch").addClass("temp");
+      $("iframe").not(".hidden").addClass("srswitch hidden");
+      $(".temp").removeClass("srswitch hidden temp");
+    }
+    else if ($(this).hasClass('yoshipaka')){
+      $(".tpswitch").addClass("temp");
+      $("iframe").not(".hidden").addClass("tpswitch hidden");
+      $(".temp").removeClass("tpswitch hidden temp");
+    }
+  });
 });

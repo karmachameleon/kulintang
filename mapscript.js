@@ -10,6 +10,7 @@ $(document).ready(function(){
   }
 
   chimes.on("click", function() {
+    $('html,body').scrollTop(0);
     if (!$(this).hasClass('selected')){
       var i = chimes.index(this);
       $(".selected").removeClass("selected");
@@ -61,20 +62,39 @@ $(document).ready(function(){
   });
 
   $(".vidswitch").on("click", function() {
-    if ($(this).hasClass('datupan')){
-      $(".pdswitch").addClass("temp");
-      $("iframe").not(".hidden").addClass("pdswitch hidden");
-      $(".temp").removeClass("pdswitch hidden temp");
+    if (!$("#hideplayer").hasClass('playeroff')){
+      if ($(this).hasClass('datupan')){
+        $(".pdswitch").addClass("temp");
+        $("iframe").not(".hidden").addClass("pdswitch hidden");
+        $(".temp").removeClass("pdswitch hidden temp");
+      }
+      else if ($(this).hasClass('susron')){
+        $(".srswitch").addClass("temp");
+        $("iframe").not(".hidden").addClass("srswitch hidden");
+        $(".temp").removeClass("srswitch hidden temp");
+      }
+      else if ($(this).hasClass('yoshipaka')){
+        $(".tpswitch").addClass("temp");
+        $("iframe").not(".hidden").addClass("tpswitch hidden");
+        $(".temp").removeClass("tpswitch hidden temp");
+      }
     }
-    else if ($(this).hasClass('susron')){
-      $(".srswitch").addClass("temp");
-      $("iframe").not(".hidden").addClass("srswitch hidden");
-      $(".temp").removeClass("srswitch hidden temp");
-    }
-    else if ($(this).hasClass('yoshipaka')){
-      $(".tpswitch").addClass("temp");
-      $("iframe").not(".hidden").addClass("tpswitch hidden");
-      $(".temp").removeClass("tpswitch hidden temp");
+    else {
+      if ($(this).hasClass('datupan')){
+        $(".pdswitch").addClass("temp");
+        $(".recent").addClass("pdswitch").removeClass("recent");
+        $(".temp").addClass("recent").removeClass("pdswitch temp");
+      }
+      else if ($(this).hasClass('susron')){
+        $(".srswitch").addClass("temp");
+        $(".recent").addClass("srswitch").removeClass("recent");
+        $(".temp").addClass("recent").removeClass("srswitch temp");
+      }
+      else if ($(this).hasClass('yoshipaka')){
+        $(".tpswitch").addClass("temp");
+        $(".recent").addClass("tpswitch").removeClass("recent");
+        $(".temp").addClass("recent").removeClass("tpswitch temp");
+      }
     }
   });
 });
